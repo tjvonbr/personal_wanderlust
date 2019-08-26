@@ -1,11 +1,11 @@
 import React from "react";
 
-const Tour = () => {
+const NavBar = () => {
   return (
     <div>
-      <h2>Tour</h2>
+      <h2>NavBar</h2>
     </div>
   );
 };
 
-export default Tour;
+export default NavBar;
