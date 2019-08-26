@@ -3,6 +3,7 @@ import Register from './Register';
 import { Form, Field, withFormik } from 'formik';
 import { BrowserRouter as Link } from 'react-router-dom';
 import * as Yup from 'yup';
+import { Icon } from 'semantic-ui-react';
 
 const Login = ({ errors, touched }) => {
   return (
