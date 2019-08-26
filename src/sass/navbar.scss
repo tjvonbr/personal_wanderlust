@@ -1,0 +1,39 @@
+.navbar-wrapper {
+  width: 100%;
+  background-color: #0b3948;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b3948;
+  width: 75%;
+  height: 60px;
+  margin: auto;
+
+  .navbar-item {
+    margin: 5px 20px;
+    color: #eff1ed;
+    font-weight: bold;
+    font-family: "Livvic", sans-serif;
+  }
+
+  #app-title {
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    position: absolute;
+    left: 250px;
+    margin: 0;
+  }
+}
+
+.social-icon {
+  color: white;
+  padding-right: 30px;
+}
