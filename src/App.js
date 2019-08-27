@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import Trip from "./components/Tours/Trip";
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
@@ -25,6 +25,7 @@ function App() {
         <Route path="/home" component={Dashboard} />
         <Route path="/about" />
         <Route path="/trips" component={TripList} />
+        <Route path="/trip" component={Trip}/>
         <Route path="/contact" />
       </Switch>
     </Router>
