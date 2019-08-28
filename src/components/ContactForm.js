@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+
 const ContactForm = props => {
 const [ formState, setFormState ] = useState({
     firstName: " ", 
@@ -44,62 +44,63 @@ const submitHandler = e => {
         help: "",
     })
 }
-    return (
-        <div>
-            <form onSubmit={submitHandler}>
-                <label>
-                    First Name
-                    <input type="text"
-                     name="name" 
-                     placeholder="First Name" 
-                     onChange={changeHandler} 
-                    //  value={formState.name}
-                     />
-                     </label>
-                <label>
-                    Last Name
-                    <input
-                     type="text"
-                      name="last" 
-                      placeholder="Last Name" 
-                      onChange={changeHandler} 
-                    //   value={formState.last}
-                      />
-                      </label>
-                <label>
-                    Email
-                    <input 
-                    type="email"
-                    name="email" 
-                    placeholder="Email" 
-                    onChange={changeHandler} 
-                    //  value={formState.email}
-                     />
-                     </label>
-                <label>
-                    Phone
-                    <input
-                     type="tel" 
-                     name="phone" 
-                     placeholder="Phone Number" 
-                     onChange={changeHandler} 
-                    //  value={formState.phone}
-                     />
-                     </label>
-                <label>
-                    Need help?
-                    <input
-                     type="text" 
-                     name="help" 
-                     placeholder="Please describe your issue." 
-                     onChange={changeHandler} 
-                    //  value={formState.help}
-                     />
-                     </label>
-                     <button>Submit</button>
-            </form>
-        </div>
-    )
+
+  return (
+    <form 
+        className="login-form"
+        onSubmit={submitHandler}>
+        <label>
+            First Name
+            <input type="text"
+             name="name" 
+             placeholder="First Name" 
+             onChange={changeHandler} 
+            //  value={formState.name}
+             />
+             </label>
+        <label>
+            Last Name
+            <input
+             type="text"
+              name="last" 
+              placeholder="Last Name" 
+              onChange={changeHandler} 
+            //   value={formState.last}
+              />
+              </label>
+        <label>
+            Email
+            <input 
+            type="email"
+            name="email" 
+            placeholder="Email" 
+            onChange={changeHandler} 
+            //  value={formState.email}
+             />
+             </label>
+        <label>
+            Phone
+            <input
+             type="tel" 
+             name="phone" 
+             placeholder="Phone Number" 
+             onChange={changeHandler} 
+            //  value={formState.phone}
+             />
+             </label>
+        <label>
+            Need help?
+            <input
+             type="text" 
+             name="help" 
+             placeholder="Please describe your issue." 
+             onChange={changeHandler} 
+            //  value={formState.help}
+             />
+             </label>
+             <button>Submit</button>
+    </form>
+  )
 }
 
 export default ContactForm;

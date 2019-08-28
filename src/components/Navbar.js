@@ -25,7 +25,9 @@ const NavBar = props => {
           <Link to="/userprofile">
             <li className="navbar-item">My Trips</li>
           </Link>
-          <li className="navbar-item">Contact Us</li>
+          <Link to="/contact">
+            <li className="navbar-item">Contact Us</li>
+          </Link>
           <li className="navbar-item"
               onClick = {() => setLoginOpen(true)} >
                 Login/Register

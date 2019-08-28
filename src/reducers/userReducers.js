@@ -29,7 +29,7 @@ export const userReducer = (state = initialState, action) => {
     case POST_USER_DATA_SUCCESS:
       return {
         ...state,
-        users: action.payload,
+        // users: {...users, action.payload}
         isLoading: false
       }
     default:
