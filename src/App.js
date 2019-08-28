@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Trip from "./components/Tours/Trip";
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from './components/LoginModal';
 import Dashboard from './components/Dashboard';
 import TripList from './components/Tours/TripList';
 
@@ -10,13 +9,9 @@ import './App.css';
 import '../src/sass/index.scss';
 
 function App() {
-  const [isRegistered, setIsRegistered] = useState(false);
-
   return (
     <Router>
       <div className="App">
-        {/* <Login /> */}
-        {/* <Register /> */}
         <Dashboard />
       </div>
 
