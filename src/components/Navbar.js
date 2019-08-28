@@ -11,24 +11,20 @@ const NavBar = props => {
     setLoginOpen(false);
   }
 
-  const grabCoordinates = () => {
-    let tripList = document.getElementsByClassName("tripList-header");
-    console.log(tripList);
-  }
-
   return (
     <div className="navbar-wrapper">
       <div id="app-title">Wanderlust</div>
       <nav className="navbar">
         <ul className="navbar-list">
-          <li className="navbar-item">Home</li>
+          <Link to="/">
+            <li className="navbar-item">Home</li>
+          </Link>
           <Link to="/trips">
             <li className="navbar-item">Available Trips</li>
           </Link>
-          <li className="navbar-item"
-              onClick={grabCoordinates}>
-                My Trips
-          </li>
+          <Link to="/userprofile">
+            <li className="navbar-item">My Trips</li>
+          </Link>
           <li className="navbar-item">Contact Us</li>
           <li className="navbar-item"
               onClick = {() => setLoginOpen(true)} >

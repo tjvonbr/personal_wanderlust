@@ -4,6 +4,8 @@ import Trip from "./components/Tours/Trip";
 import Login from './components/LoginModal';
 import Dashboard from './components/Dashboard';
 import TripList from './components/Tours/TripList';
+import UserProfile from './components/UserProfile';
+import Navbar from './components/Navbar';
 
 import './App.css';
 import '../src/sass/index.scss';
@@ -12,15 +14,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Dashboard />
+        <Navbar />
       </div>
 
       <Switch>
         <Route path="/login" component={Login}/>
-        <Route path="/home" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
         <Route path="/about" />
         <Route path="/trips" component={TripList} />
-        <Route path="/trip" component={Trip}/>
+        <Route exact path="/trip" component={Trip}/>
+        <Route path="/userprofile" component={UserProfile} />
         <Route path="/contact" />
       </Switch>
     </Router>
