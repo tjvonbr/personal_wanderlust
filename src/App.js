@@ -5,7 +5,6 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 import ContactForm from './components/ContactForm';
-=======
 import Dashboard from './components/Dashboard';
 import TripList from './components/Tours/TripList';
 

@@ -18,10 +18,12 @@ const changeHandler = e => {
     setFormState({
     ...formState, [e.target.name]: e.target.value
     })
+    console.log(formState)
 }
 
 const submitHandler = e => {
     e.preventDefault();
+    console.log("new-user", formState)
     // axios
     // // post.("")
 
