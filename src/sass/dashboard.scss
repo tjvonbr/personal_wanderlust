@@ -1,0 +1,32 @@
+// Font Variables
+$livvic: "Livvic", sans-serif;
+
+.dashboard-photo {
+  width: 60%;
+  height: 500px;
+  margin-top: 50px;
+}
+
+.icon-wrapper {
+  margin-top: 20px;
+
+  .travel-icon {
+    color: #416165;
+  }
+}
+
+.app-motto {
+  margin: 15px auto;
+  width: 50%;
+  font-size: 24px;
+  font-family: $livvic;
+  color: #0b3948
+}
+
+.mission-statement {
+  margin: 30px auto;
+  width: 50%;
+  font-size: 21px;
+  font-family: $livvic;
+  color: #416165
+}

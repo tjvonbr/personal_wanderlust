@@ -1,0 +1,79 @@
+// Variables
+$livvic: "Livvic", sans-serif;
+$dancin: "Dancing Script", cursive;
+$shadows: "Shadows Into Light", cursive;
+
+$green: #306b34;
+$offwhite: #eff1ed;
+$crimson: #721817;
+$lightblue: #416165;
+$darkblue: #0b3948;
+
+.navbar-wrapper {
+  width: 100%;
+  background-color: #0b3948;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-around;
+
+  #app-title {
+    color: #eff1ed;
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    margin-top: 20px;
+  }
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0b3948;
+  width: 100%;
+  height: 60px;
+  margin: auto;
+
+  .navbar-item {
+    margin: 5px 30px;
+    color: #eff1ed;
+    font-weight: bold;
+    font-family: "Livvic", sans-serif;
+    font-size: 18px;
+    transition-property: font;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    &:hover {
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+}
+
+.social-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .social-icon {
+    color: #eff1ed;
+    padding: 0 15px;
+    transition-property: height, width;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    height: 10px;
+    width: 10px;
+
+    &:hover {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
+
+
+
