@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Image from "./tripimg.jpg";
 
 const MainDiv = styled.div`
-display: flex;
-background: #eff1ed;
-width: 60%
-align-content: center;
+  display: flex;
+  background: #eff1ed;
+  width: 60%;
+  align-content: center;
 `;
 
 const ImgDiv = styled.img`
