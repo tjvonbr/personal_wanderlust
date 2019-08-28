@@ -1,0 +1,26 @@
+// Variables
+$livvic: "Livvic", sans-serif;
+$dancin: "Dancing Script", cursive;
+$shadows: "Shadows Into Light", cursive;
+
+$green: #306b34;
+$offwhite: #eff1ed;
+$crimson: #721817;
+$lightblue: #416165;
+$darkblue: #0b3948;
+
+.tripList-wrapper {
+  border: 1px solid $darkblue;
+  margin: auto;
+  width: 65%;
+}
+
+.tripList-header {
+  height: 50px;
+  background: $lightblue;
+  color: $offwhite;
+  font-family: $livvic;
+  font-size: 28px;
+  text-align: left;
+  padding: 15px 5px;
+}
