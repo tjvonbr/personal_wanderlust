@@ -1,34 +1,59 @@
+// Variables
+$livvic: "Livvic", sans-serif;
+$dancin: "Dancing Script", cursive;
+$shadows: "Shadows Into Light", cursive;
+
+$green: #306b34;
+$offwhite: #eff1ed;
+$crimson: #721817;
+$lightblue: #416165;
+$darkblue: #0b3948;
+
 .landing-wrapper {
-  border: 1px solid black;
+  border: 1px solid $darkblue;
   border-radius: 3px;
   margin: auto;
   width: 33%;
   box-shadow: 3px 3px lightgray;
+}
 
-  .landing-header {
-    margin: 10px auto;
-    margin-bottom: 10px;
-    width: 50%;
-  }
+.modal-header {
+  margin: 10px auto;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  background-color: $lightblue;
+}
+
+.login-form {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.content {
+  padding: 0px;
+  background-color: $offwhite;
 }
 
 .landing-input {
   border-radius: 3px;
   padding: 5px;
-  width: 40%;
+  width: 60%;
   margin-top: 20px;
 }
 
 .field-description {
   margin: 0 auto;
-  width: 40%;
+  width: 60%;
   font-size: 12px;
   text-align: left;
   font-weight: bold;
 }
 
 .error {
-  width: 40%;
+  width: 60%;
   font-size: 10px;
   color: red;
   padding: 0;
@@ -37,15 +62,16 @@
 }
 
 .btn {
-  width: 80px;
-  padding: 5px;
-  border-radius: 5px;
+  width: 110px;
+  padding: 10px 5px;
+  border-radius: 4px;
   border: none;
   font-weight: bold;
-  color: white;
+  color: $crimson;
   margin-top: 20px;
   margin-bottom: 10px;
-  background: cadetblue;
+  background: $crimson;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
@@ -64,4 +90,23 @@
   }
 }
 
+.button.ui.icon.right.labeled.button.btn.login-btn {
+  background-color: $crimson;
+  color: $offwhite;
+  margin: 20px 10px;
+
+  &:hover {
+    background-color: lighten($crimson, 10%);
+  }
+}
+
+.button.ui.icon.right.labeled.button.btn.dashboard-btn {
+  background-color: $lightblue;
+  color: $offwhite;
+  margin: 20px 10px;
+
+  &:hover {
+    background-color: lighten($lightblue, 10%);
+  }
+}
 
