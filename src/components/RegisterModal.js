@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'semantic-ui-react'
 import { Form, Field, withFormik } from 'formik';
@@ -6,117 +6,90 @@ import * as Yup from 'yup';
 
 import { registerUser } from '../actions/userActions';
 
-const Register = ({ registerUser, errors, touched, registerOpen, handleClose }) => {
-  const [newUser, setNewUser] = useState({
-      firstName: "", 
-      lastName: "",
-      email: "",
-      username: "", 
-      password: ""
-  })
+const Register = props => {
 
-  const handleChanges = e => {
-    setNewUser({...newUser, [e.target.name]: e.target.value})
-    console.log(newUser);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log("NEW USER", newUser);
-    registerUser(newUser)
-
-  }
+ const { errors, touched, registerOpen, handleClose } = props
 
   return (
-    <Modal className="modal-container" 
-            dimmer="true" 
-            open={registerOpen} 
-            onClose={handleClose} 
-            size="tiny">
+    <Modal 
+      className="modal-container" 
+      dimmer="true" 
+      open={registerOpen} 
+      onClose={handleClose} 
+      size="small">
         <Modal.Header className="modal-header">Welcome to Wanderlust! You're only a few steps away from planning the trip of your dreams!</Modal.Header>
         <Modal.Content>
           <Form 
-            className="login-form"
-            onSubmit={handleSubmit}>
+            className="login-form">
+
+            <p className="field-description">First name</p>
             <Field 
               className="landing-input" 
               type="text" 
               name="firstName"
-              value={newUser.firstName}
-              placeholder="First name" 
-              onChange={handleChanges}/>
-              <p className="field-description">First name</p>
+              placeholder="First name" />
               {touched.firstName && errors.firstName && (
                 <p className="error">*{errors.firstName}</p>
               )}
 
+            <p className="field-description">Last name</p>
             <Field 
               className="landing-input" 
               type="text" 
               name="lastName" 
-              value={newUser.lastName}
-              placeholder="Last name" 
-              onChange={handleChanges} />
-              <p className="field-description">Last name</p>
+              placeholder="Last name" />
               {touched.lastName && errors.lastName && (
                 <p className="error">*{errors.lastName}</p>
               )}
 
+            <p className="field-description">Email</p>
             <Field 
               className="landing-input" 
               type="text" 
               name="email" 
-              value={newUser.email}
-              placeholder="Email address" 
-              onChange={handleChanges} />
-              <p className="field-description">Email</p>
+              placeholder="Email address" />
               {touched.email && errors.email && (
               <p className="error">*{errors.email}</p>
               )}
 
+            <p className="field-description">Username</p>
             <Field 
               className="landing-input" 
               type="text" 
               name="username" 
-              value={newUser.username}
-              placeholder="Username" 
-              onChange={handleChanges} />
-              <p className="field-description">Username</p>
+              placeholder="Username" />
               {touched.username && errors.username && (
               <p className="error">*{errors.username}</p>
               )}
 
+            <p className="field-description">Password</p>
             <Field 
               className="landing-input" 
               type="password" 
               name="password" 
-              value={newUser.password}
-              placeholder="Password" 
-              onChange={handleChanges} />
-              <p className="field-description">Password</p>
+              placeholder="Password" />
               {touched.password && errors.password && (
               <p className="error">*{errors.password}</p>
               )}
 
-          <div className="modal-btn-wrapper"> 
-            <Button 
-              className="btn dashboard-btn" 
-              type="submit"
-              icon="x"
-              labelPosition="right"
-              content="Home"
-              onClick={handleClose}>
-            </Button>
-            
-            <Button 
-              className="btn login-btn" 
-              type="submit"
-              icon="checkmark"
-              labelPosition="right"
-              content="Register"
-              onClick={handleClose}>
-            </Button>
-          </div>  
+            <div className="modal-btn-wrapper"> 
+              <Button 
+                className="btn dashboard-btn" 
+                icon="x"
+                labelPosition="right"
+                content="Home"
+                onClick={handleClose}>
+              </Button>
+              
+              <Button 
+                className="btn login-btn" 
+                type="submit"
+                icon="checkmark"
+                labelPosition="right"
+                content="Register"
+                >
+              </Button>
+            </div>  
           </Form>
  
       </Modal.Content>
@@ -147,6 +120,14 @@ const FormikRegister = withFormik({
     password: Yup.string()
       .required("Password is a required field.")
   }),
+
+  handleSubmit(values, {props}) {
+    console.log('submit fire')
+    
+    console.log('values', values)
+    props.registerUser(values)
+    
+  }
 
 })(Register)
 

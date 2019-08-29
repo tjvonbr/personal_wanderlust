@@ -1,6 +1,6 @@
 // Variables
 $livvic: "Livvic", sans-serif;
-$dancin: "Dancing Script", cursive;
+$dancing: "Dancing Script", cursive;
 $shadows: "Shadows Into Light", cursive;
 
 $green: #306b34;
@@ -10,9 +10,16 @@ $lightblue: #416165;
 $darkblue: #0b3948;
 
 .tripList-wrapper {
-  border: 1px solid $darkblue;
   margin: auto;
-  width: 65%;
+  width: 100%;
+}
+
+.list-explanation {
+  margin: 20px auto;
+  width: 60%;
+  font-family: $livvic;
+  font-size: 16px;
+  text-align: center;
 }
 
 .tripList-header {
@@ -21,6 +28,14 @@ $darkblue: #0b3948;
   color: $offwhite;
   font-family: $livvic;
   font-size: 28px;
-  text-align: left;
+  text-align: center;
   padding: 15px 5px;
+}
+
+.signature {
+  width: 70%;
+  font-family: $dancing;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
 }

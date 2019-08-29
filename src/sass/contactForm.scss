@@ -9,9 +9,47 @@ $crimson: #721817;
 $lightblue: #416165;
 $darkblue: #0b3948;
 
-.login-form {
+.contact-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 40%;
+  border: 1px solid $darkblue;
+  border-radius: 3px;
+  background: $offwhite;
+  box-shadow: 3px 3px lightgray;
+}
+
+.contact-title {
   width: 50%;
-  border: 1px solid black;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.contact-input {
+  width: 60%;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: $livvic;
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+}
+
+.field-description {
+  width: 60%;
+  font-size: 16px;
+  font-family: $livvic;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+.error {
+  width: 60%;
+
 }
