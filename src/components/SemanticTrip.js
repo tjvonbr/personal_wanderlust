@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Card, Image } from 'semantic-ui-react'
 
+import { fetchId } from '../actions/userActions';
+
 const SemanticTrip = props => {
+  console.log('semantic trip', props)
   return (
     <Card 
       className="trip-card"
@@ -13,10 +16,11 @@ const SemanticTrip = props => {
           size='small'
           src={props.trips[0].img}
         />
-        <Card.Header>{props.trips[0].name}</Card.Header>
-        <Card.Meta>{props.trips[0].street}</Card.Meta>
-        <Card.Meta>{props.trips[0].rest}</Card.Meta>
-        <Card.Description>{props.trips[0].description}</Card.Description>
+        <Card.Header>{props.trip.title}</Card.Header>
+        <Card.Meta>Start Date: {props.trip.startDate}</Card.Meta>
+        <Card.Meta>End Date: {props.trip.endDate}</Card.Meta>
+        <Card.Meta>Location: {props.trip.location}</Card.Meta>
+        <Card.Description>Description: {props.trip.description}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className='trip-btn-container'>
@@ -25,7 +29,8 @@ const SemanticTrip = props => {
             className="btn add-btn"
             icon="add"
             labelPosition="right"
-            content="Add Trip">
+            content="Add Trip"
+            onClick={() => props.fetchId(props.trip.id)}>
           </Button>
         </div>
       </Card.Content>
@@ -44,10 +49,11 @@ const cardStyle = {
 
 const mapStateToProps = state => {
   return {
-    trips: state.trips
+    trips: state.tripsReducer.trips
   };
 };
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  {fetchId}
 )(SemanticTrip);

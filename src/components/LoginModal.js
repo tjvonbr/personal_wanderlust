@@ -13,7 +13,7 @@ const LoginModal = ({ loginOpen, handleClose, errors, touched }) => {
     <div>
       <Modal 
         className="modal-container" 
-        dimmer="true" 
+        dimmer={true} 
         open={loginOpen} 
         onClose={handleClose} 
         size="small">
