@@ -46,7 +46,25 @@ const Button = styled.button`
   border: none;
   box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3);
 `;
+
+
 const Trip = props => {
+const { tripState, setTripState }= useState({
+  id: "",
+  title: "",
+  description: "",
+  organizerId: "",
+  location: "",
+  cost:"",
+  isFree:"",
+  startDate:"",
+  endDate:"",
+});
+
+axios.get("https://wanderlust-be.herokuapp.com/api/trips")
+.then (res => {
+  console.log("check here", res)
+})
   return (
     <MainDiv>
       <ImgDiv src={Image} alt="image of trip" />

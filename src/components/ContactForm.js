@@ -2,11 +2,11 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 const ContactForm = props => {
 const [ formState, setFormState ] = useState({
-    firstName: " ", 
-    lastName: " ",
-    email: " ",
-    phone:" ",
-    help:" ",
+    firstName: "", 
+    lastName: "",
+    email: "",
+    phone: "",
+    help: "",
 });
 const [ isUpdating,setIsUpdating ] = useState(false)
 useEffect(() => {
@@ -24,8 +24,8 @@ const changeHandler = e => {
 const submitHandler = e => {
     e.preventDefault();
     console.log("new-user", formState)
-    // axios
-    // // post.("")
+    axios
+    // post.("")
 
     // .then (res => {
     //     console.log(res)
