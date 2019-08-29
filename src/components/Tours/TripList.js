@@ -20,6 +20,7 @@ const DescriptParagraph = styled.p`
   padding: 15px;
 `;
 
+
 const TripList = props => {
 
 const [ tripState, setTripState ]= useState([]);
@@ -54,6 +55,7 @@ useEffect(() => {
 
     </div> 
   </div>
+
   );
 };
 

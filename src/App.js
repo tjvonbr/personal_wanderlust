@@ -1,9 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Trip from "./components/Tours/Trip";
-import Login from "./components/LoginModal";
-import Dashboard from "./components/Dashboard";
-import TripList from "./components/Tours/TripList";
+import Login from './components/LoginModal';
+import Dashboard from './components/Dashboard';
+import TripList from './components/Tours/TripList';
+import UserProfile from './components/UserProfile';
+import Navbar from './components/Navbar';
+import ContactForm from './components/ContactForm';
 
 import "./App.css";
 import "../src/sass/index.scss";
@@ -12,16 +15,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Dashboard />
+        <Navbar />
       </div>
 
       <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/home" component={Dashboard} />
+        <Route path="/login" component={Login}/>
+        <Route exact path="/" component={Dashboard} />
         <Route path="/about" />
         <Route path="/trips" component={TripList} />
-        <Route path="/trip" component={Trip} />
-        <Route path="/contact" />
+        <Route exact path="/trip" component={Trip}/>
+        <Route path="/userprofile" component={UserProfile} />
+        <Route path="/contact" component={ContactForm} />
       </Switch>
     </Router>
   );
