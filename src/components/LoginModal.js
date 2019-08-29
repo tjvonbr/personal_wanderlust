@@ -11,18 +11,29 @@ const LoginModal = ({ loginOpen, handleClose, errors, touched }) => {
 
   return (
     <div>
-      <Modal className="modal-container" dimmer="true" open={loginOpen} onClose={handleClose} size="tiny">
+      <Modal 
+        className="modal-container" 
+        dimmer="true" 
+        open={loginOpen} 
+        onClose={handleClose} 
+        size="small">
+
         <Modal.Header className="modal-header">Welcome back!  Please log in to view our new content!</Modal.Header>
         <Modal.Content>
 
-        <Form className="login-form">
-          <Field className="landing-input" type="text" name="username" placeholder="Please enter your username" />
-            <p className="field-description">Username</p>
+          <Form className="login-form">
+          <p className="field-description">Username</p>
+          <Field 
+            className="landing-input" 
+            type="text" 
+            name="username" 
+            placeholder="Please enter your username" />
             {touched.username && errors.username && (
               <p className="error">*{errors.username}</p>
               )}
+              
+          <p className="field-description">Password</p>
           <Field className="landing-input" type="password" name="password" placeholder="Please enter your password" />
-            <p className="field-description">Password</p>
             {touched.password && errors.password && (
               <p className="error">*{errors.password}</p>
               )}

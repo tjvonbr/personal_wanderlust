@@ -1,0 +1,18 @@
+$livvic: "Livvic", sans-serif;
+$dancin: "Dancing Script", cursive;
+$shadows: "Shadows Into Light", cursive;
+
+$green: #306b34;
+$offwhite: #eff1ed;
+$crimson: #721817;
+$lightblue: #416165;
+$darkblue: #0b3948;
+
+.button.ui.icon.right.floated.right.labeled.button.btn.add-btn {
+  background-color: $crimson;
+  color: $offwhite;
+
+  &:hover {
+    background-color: lighten($crimson, 10%);
+  }
+}

@@ -6,6 +6,8 @@ import Dashboard from './components/Dashboard';
 import TripList from './components/Tours/TripList';
 import UserProfile from './components/UserProfile';
 import Navbar from './components/Navbar';
+import ContactForm from './components/ContactForm';
+
 import "./App.css";
 import "../src/sass/index.scss";
 
@@ -23,7 +25,7 @@ function App() {
         <Route path="/trips" component={TripList} />
         <Route exact path="/trip" component={Trip}/>
         <Route path="/userprofile" component={UserProfile} />
-        <Route path="/contact" />
+        <Route path="/contact" component={ContactForm} />
       </Switch>
     </Router>
   );
