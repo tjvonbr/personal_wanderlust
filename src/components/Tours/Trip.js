@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "./tripimg.jpg";
+import axios from "axios";
+
 
 const MainDiv = styled.div`
   display: flex;
