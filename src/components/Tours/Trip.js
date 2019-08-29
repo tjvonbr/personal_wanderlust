@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "./tripimg.jpg";
 import axios from "axios";
@@ -51,32 +51,20 @@ const Button = styled.button`
 
 
 const Trip = props => {
-const { tripState, setTripState }= useState({
-  id: "",
-  title: "",
-  description: "",
-  organizerId: "",
-  location: "",
-  cost:"",
-  isFree:"",
-  startDate:"",
-  endDate:"",
-});
 
-axios.get("https://wanderlust-be.herokuapp.com/api/trips")
-.then (res => {
-  console.log("check here", res)
-})
+
+console.log("check here",props)
   return (
     <MainDiv>
       <ImgDiv src={Image} alt="image of trip" />
       <Section>
         <div>
-          <HeaderTag>Bearskin Lodge on the Gunflint Trail</HeaderTag>
-          <ParagraphInfo>Address 1</ParagraphInfo>
-          <ParagraphInfo>Address 2</ParagraphInfo>
-          <ParagraphInfo>Contact #</ParagraphInfo>
-          <DescriptParagraph>Place holder paragraph</DescriptParagraph>
+          {/* <HeaderTag>{props.trip.title}</HeaderTag>
+          <ParagraphInfo>{props.trip.startDate}</ParagraphInfo>
+          <ParagraphInfo>{props.trip.endDate}</ParagraphInfo>
+          <ParagraphInfo>{props.trip.cost}</ParagraphInfo>
+          <ParagraphInfo>{props.trip.location}</ParagraphInfo>
+          <DescriptParagraph>{props.trip.description}</DescriptParagraph> */}
         </div>
         <Button>View Website</Button>
         <Button>Send Email</Button>
@@ -87,3 +75,4 @@ axios.get("https://wanderlust-be.herokuapp.com/api/trips")
 };
 
 export default Trip;
+
