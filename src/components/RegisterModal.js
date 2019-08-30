@@ -123,10 +123,10 @@ const FormikRegister = withFormik({
   }),
 
   handleSubmit(values, {props}) {
-    axios.post('localhost:3300/api/users/register', values)
+    axios.post('https://wanderlust-be.herokuapp.com/api/users/register', values)
       .then(res => {
-        // localStorage.setItem('token', res.data.token);
-        console.log(res.data)
+        localStorage.setItem('token', res.data.token);
+        props.handleClose()
       }) .catch(err =>{
         console.log(err)
       })
