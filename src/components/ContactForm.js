@@ -66,6 +66,7 @@ const ContactForm = props => {
   );
 };
 
+
 const FormikContact = withFormik({
   mapPropsToValues({ firstName, lastName, email, phone, help }) {
     return {
@@ -76,6 +77,7 @@ const FormikContact = withFormik({
       help: help || "",
     };
   },
+
 
   validationSchema: Yup.object().shape({
     firstName: Yup.string()
