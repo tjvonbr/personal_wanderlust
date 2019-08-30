@@ -1,78 +1,46 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import Image from "./tripimg.jpg";
-import axios from "axios";
+import React from 'react';
+import { Button, Card, Image } from 'semantic-ui-react';
 
+  const Trip = ({trip}) => {
+    return(
+    <Card 
+      className="trip-card"
+      style={cardStyle}
+      centered={true}>
+      <Card.Content>
+        <Card.Header>{trip.title}</Card.Header>
+        <Card.Meta>Start Date: {trip.startDate}</Card.Meta>
+        <Card.Meta>End Date: {trip.endDate}</Card.Meta>
+        <Card.Meta>Cost: ${trip.cost}</Card.Meta>
+        <Card.Description>
+          {trip.description}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div className='trip-btn-container'>
+          <Button 
+            floated="right"
+            className="btn add-btn"
+            icon="add"
+            labelPosition="right"
+            content="Add Trip"
+            size="small"
+            // onClick={() => props.fetchId(props.trip.id)}
+            >
 
-const MainDiv = styled.div`
-  display: flex;
-  background: #eff1ed;
-  width: 60%;
-  align-content: center;
-`;
-
-const ImgDiv = styled.img`
-  width: 200px;
-  height: auto;
-  margin: 25px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
-`;
-const Section = styled.section`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`;
-const HeaderTag = styled.h1`
-  font-size: 1.8rem;
-  color: white;
-`;
-
-const ParagraphInfo = styled.p`
-  font-size: 1rem;
-  color: white;
-  line-height: 4px;
-`;
-const DescriptParagraph = styled.p`
-  margin: 25px;
-  color: white;
-  font-size: 0.8rem;
-  padding: 15px;
-`;
-
-const Button = styled.button`
-  border-radius: 20px;
-  padding: 16px 22px;
-  margin: 10px;
-  width: 27%;
-  align-item: center;
-  border: none;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3);
-`;
-
-
-const Trip = props => {
-
-
-console.log("check here",props)
-  return (
-    <MainDiv>
-      <ImgDiv src={Image} alt="image of trip" />
-      <Section>
-        <div>
-          {/* <HeaderTag>{props.trip.title}</HeaderTag>
-          <ParagraphInfo>{props.trip.startDate}</ParagraphInfo>
-          <ParagraphInfo>{props.trip.endDate}</ParagraphInfo>
-          <ParagraphInfo>{props.trip.cost}</ParagraphInfo>
-          <ParagraphInfo>{props.trip.location}</ParagraphInfo>
-          <DescriptParagraph>{props.trip.description}</DescriptParagraph> */}
+          </Button>
         </div>
-        <Button>View Website</Button>
-        <Button>Send Email</Button>
-        <Button>Book Now</Button>
-      </Section>
-    </MainDiv>
-  );
-};
+      </Card.Content>
+    </Card>
+    )}
+
+    const cardStyle = {
+  width: '600px',
+  height: '300px',
+  margin: '20px auto',
+  border: '1px solid gray',
+  borderRadius: '3px',
+  boxShadow: '2px 2px lightgray'
+}
 
 export default Trip;
-
