@@ -4,37 +4,35 @@ import { Button, Card, Image } from 'semantic-ui-react'
 
 import { fetchId } from '../actions/userActions';
 
-const SemanticTrip = props => {
-  console.log('semantic trip', props)
+const SemanticTrip = ({trip, fetchId}) => {
   return (
-    <Card 
-      className="trip-card"
-      style={cardStyle}>
-      <Card.Content>
-        <Image
-          floated='right'
-          size='small'
-          src={props.trips[0].img}
-        />
-        <Card.Header>{props.trip.title}</Card.Header>
-        <Card.Meta>Start Date: {props.trip.startDate}</Card.Meta>
-        <Card.Meta>End Date: {props.trip.endDate}</Card.Meta>
-        <Card.Meta>Location: {props.trip.location}</Card.Meta>
-        <Card.Description>Description: {props.trip.description}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <div className='trip-btn-container'>
-          <Button
-            floated="right"
-            className="btn add-btn"
-            icon="add"
-            labelPosition="right"
-            content="Add Trip"
-            onClick={() => props.fetchId(props.trip.id)}>
-          </Button>
-        </div>
-      </Card.Content>
-    </Card>
+    <Card.Group
+      itemsPerRow="two">  
+      <Card 
+        className="trip-card"
+        style={cardStyle}>
+    
+        <Card.Content>
+          <Card.Header>{trip.title}</Card.Header>
+          <Card.Meta>Start Date: {trip.startDate}</Card.Meta>
+          <Card.Meta>End Date: {trip.endDate}</Card.Meta>
+          <Card.Meta>Location: {trip.location}</Card.Meta>
+          <Card.Description>Description: {trip.description}</Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <div className='trip-btn-container'>
+            <Button
+              floated="right"
+              className="btn add-btn"
+              icon="add"
+              labelPosition="right"
+              content="Add Trip"
+              onClick={() => fetchId(trip.id)}>
+            </Button>
+          </div>
+        </Card.Content>
+      </Card>
+    </Card.Group>
   );
 };
 

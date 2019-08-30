@@ -24,8 +24,8 @@ const mapStateToProps = state => {
   return {
     users: state.userReducer.users,
     savedTrips: state.tripsReducer.savedTrips
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps
