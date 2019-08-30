@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UserCard from './UserCard';
 import SemanticTrip from './SemanticTrip';
+import Trip from "./Trip";
 
 const UserProfile = props => {
   return (
@@ -13,7 +14,7 @@ const UserProfile = props => {
         <h3 className="user-trip-list">Trips You're Interested In:</h3>
       </div>
       {props.savedTrips.map(savedTrip => (
-          <SemanticTrip trip={savedTrip} key={savedTrip.id} />
+          <Trip trip={savedTrip} key={savedTrip.id} />
         ))}
     </div>
   );
