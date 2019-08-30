@@ -1,8 +1,14 @@
 // Font Variables
 $livvic: "Livvic", sans-serif;
 
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .dashboard-photo {
-  width: 60%;
+  width: 55%;
   height: 500px;
   margin-top: 50px;
 }
@@ -20,7 +26,8 @@ $livvic: "Livvic", sans-serif;
   width: 50%;
   font-size: 24px;
   font-family: $livvic;
-  color: #0b3948
+  color: #0b3948;
+  text-align: center;
 }
 
 .mission-statement {
@@ -28,5 +35,6 @@ $livvic: "Livvic", sans-serif;
   width: 50%;
   font-size: 21px;
   font-family: $livvic;
-  color: #416165
+  color: #416165;
+  text-align: center;
 }

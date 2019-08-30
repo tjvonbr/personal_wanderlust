@@ -1,0 +1,28 @@
+// Variables
+$livvic: "Livvic", sans-serif;
+$dancin: "Dancing Script", cursive;
+$shadows: "Shadows Into Light", cursive;
+
+$green: #306b34;
+$offwhite: #eff1ed;
+$crimson: #721817;
+$lightblue: #416165;
+$darkblue: #0b3948;
+
+.user-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user-trip-wrapper {
+  width: 60%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: $lightblue;
+  color: $offwhite;
+}
+.user-trip-list {
+  font-size: 24px;
+}

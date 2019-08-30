@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from './Navbar';
-import TripList from './Tours/TripList';
+import TripList from './TripList';
 import rainier from '../images/rainier.jpg';
 
 import { Icon } from 'semantic-ui-react';
@@ -8,9 +7,8 @@ import { Icon } from 'semantic-ui-react';
 const Dashboard = props => {
   return (
     <div className="dashboard-wrapper">
-      <Navbar />
       <div className="dashboard-content">
-        <img className="dashboard-photo" src={rainier} type="Scenic Photograph"/>
+        <img className="dashboard-photo" src={rainier} alt="Scenic Photograph"/>
         <div className="icon-wrapper">
           <Icon className="travel-icon" name="travel" size="big" />
         </div>
