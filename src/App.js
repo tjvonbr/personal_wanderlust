@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Trip from "./components/Tours/Trip";
-import Login from './components/LoginModal';
+import SemanticTrip from "./components/SemanticTrip";
+import LoginModal from './components/LoginModal';
 import Dashboard from './components/Dashboard';
-import TripList from './components/Tours/TripList';
+import TripList from './components/TripList';
 import UserProfile from './components/UserProfile';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
@@ -19,11 +19,11 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/login" component={Login}/>
+        <Route path="/login" component={LoginModal}/>
         <Route exact path="/" component={Dashboard} />
         <Route path="/about" />
         <Route path="/trips" component={TripList} />
-        <Route exact path="/trip" component={Trip}/>
+        <Route exact path="/trip" component={SemanticTrip}/>
         <Route path="/userprofile" component={UserProfile} />
         <Route path="/contact" component={ContactForm} />
       </Switch>

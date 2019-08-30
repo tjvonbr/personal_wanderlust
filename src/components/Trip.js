@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "./tripimg.jpg";
+import Image from "./images/tripimg.jpg";
 
 const MainDiv = styled.div`
   display: flex;
