@@ -100,7 +100,7 @@ const FormikContact = withFormik({
 
 const mapStateToProps = state => {
   return {
-    users: state.users
+    users: state.userReducer.users
   };
 };
 

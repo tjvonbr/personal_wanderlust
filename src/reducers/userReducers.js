@@ -1,12 +1,20 @@
-import React from 'react';
-
 import {
   POST_USER_DATA_START,
-  POST_USER_DATA_SUCCESS
+  POST_USER_DATA_SUCCESS,
+  FETCH_TRIP_DATA_START,
+  FETCH_TRIP_DATA_SUCCESS,
+  FETCH_TRIP_DATA_FAILURE,
+  FETCH_TRIP_ID_START,
+  FETCH_TRIP_ID_SUCCESS,
+  FETCH_TRIP_ID_FAILURE
+
 } from '../actions/userActions';
 
-const initialState = {
-
+const tripInitialState = {
+  trips: [],
+  savedTrips: [],
+}
+const usersInitialState = {
   users: [
     {
       firstName: "Trevor",
@@ -17,20 +25,11 @@ const initialState = {
       id: Date.now()
     }
   ],
-
-  trips: [
-    {
-      name: "Moose Track Adventure Resort, Outfitter & Guide Service",
-      street: "593 Kawishiwi Trail",
-      rest: "Ely, MN 55731",
-      number: 218-365-4106,
-      description: "Ely's closest resort to the Bondary Waters and just 7 miles outside Ely.  NEW in 2019 and open year round -- 4 bedroom/2 bathroom lake home with air conditioning, gas fireplace and dishwasher -- sleeps 16.  Great for family reunions and more!",
-      img: 'https://www.exploreminnesota.com/memberimage.ashx?id=26827&width=203&mar=1'
-    }
-  ]
+  trips: [],
+  credentials: {}
 }
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state = usersInitialState, action) => {
   switch (action.type) {
     case POST_USER_DATA_START:
       return {
@@ -40,10 +39,52 @@ export const userReducer = (state = initialState, action) => {
     case POST_USER_DATA_SUCCESS:
       return {
         ...state,
-        // users: {...users, action.payload}
+        users: action.payload
+        // isLoading: false
+      }
+    default:
+      return state;
+  };
+};
+
+export const tripsReducer = (state = tripInitialState, action) => {
+  switch (action.type) {
+    case FETCH_TRIP_DATA_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case FETCH_TRIP_DATA_SUCCESS:
+      return {
+        ...state,
+        trips: action.payload,
+        isLoading: false
+      }
+    case FETCH_TRIP_DATA_FAILURE:
+      return {
+        ...state,
+        isLoading: false
+      }
+      case FETCH_TRIP_ID_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case FETCH_TRIP_ID_SUCCESS:
+      return {
+        ...state,
+        savedTrips:[...state.savedTrips, action.payload],
+        isLoading: false
+      }
+    case FETCH_TRIP_ID_FAILURE:
+      return {
+        ...state,
         isLoading: false
       }
     default:
       return state;
   }
 }
+
+
+export const reducers = { tripsReducer, userReducer };

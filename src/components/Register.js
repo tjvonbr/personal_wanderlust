@@ -61,7 +61,10 @@ const FormikRegister = withFormik({
     password: Yup.string()
       .required("Password is a required field.")
   }),
-
+  handleSubmit(values, props) {
+    console.log("submit", values);
+	console.log("props", props);
+  }
 })(Register)
 
 export default FormikRegister;

@@ -1,5 +1,11 @@
+<<<<<<< HEAD:src/components/Tours/Trip.js
 import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
+=======
+import React from "react";
+import styled from "styled-components";
+import Image from "./images/tripimg.jpg";
+>>>>>>> 182346fd4705087b520cbdfdffe8f8d794ee2a17:src/components/Trip.js
 
   const Trip = ({trip}) => {
     return(
