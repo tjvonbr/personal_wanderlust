@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'semantic-ui-react'
 import { Form, Field, withFormik } from 'formik';
@@ -122,18 +123,16 @@ const FormikRegister = withFormik({
   }),
 
   handleSubmit(values, {props}) {
-    console.log('submit fire')
-    
-    console.log('values', values)
     props.registerUser(values)
-    
+    props.handleClose()
+     
   }
 
 })(Register)
 
 const mapStateToProps = state => {
   return {
-    users: state.usersReducer.users
+    users: state.userReducer.users
   }   
 }
 
