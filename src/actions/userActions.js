@@ -5,11 +5,24 @@ export const POST_USER_DATA_START = "POST_USER_DATA_START";
 export const POST_USER_DATA_SUCCESS = "POST_USER_DATA_SUCCESS";
 
 export const registerUser = creds => dispatch => {
-  console.log('action creds', creds)
-  dispatch ({ 
-    type: POST_USER_DATA_START,
-    actions: creds
-   })
+  axios.post('https://wanderlust-be.herokuapp.com/api/users/register', creds)
+  .then(res => {
+ 
+  
+  }) .catch(err =>{
+    console.log(err)
+  })
+ 
+};
+export const loginUser = creds => dispatch => {
+  axios.post('https://wanderlust-be.herokuapp.com/api/users/login', creds)
+  .then(res => {
+    localStorage.setItem('token', res.data.token);
+  
+  }) .catch(err =>{
+    console.log(err)
+  })
+ 
 };
 
 // FETCH TRIPS

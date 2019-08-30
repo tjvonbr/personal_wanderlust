@@ -123,21 +123,16 @@ const FormikRegister = withFormik({
   }),
 
   handleSubmit(values, {props}) {
-    axios.post('https://wanderlust-be.herokuapp.com/api/users/register', values)
-      .then(res => {
-        localStorage.setItem('token', res.data.token);
-        props.handleClose()
-      }) .catch(err =>{
-        console.log(err)
-      })
-     console.log(values)
+    props.registerUser(values)
+    props.handleClose()
+     
   }
 
 })(Register)
 
 const mapStateToProps = state => {
   return {
-    users: state.usersReducer.users
+    users: state.userReducer.users
   }   
 }
 

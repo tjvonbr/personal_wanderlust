@@ -3,8 +3,9 @@ import { Button, Modal } from 'semantic-ui-react'
 import { Form, Field, withFormik } from 'formik';
 import { BrowserRouter as Link } from 'react-router-dom';
 import * as Yup from 'yup';
-
+import {loginUser} from '../actions/userActions'
 import RegisterModal from './RegisterModal';
+import {connect} from 'react-redux';
 
 const LoginModal = ({ loginOpen, handleClose, errors, touched }) => {
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -88,7 +89,10 @@ const FormikLogin = withFormik({
     password: Yup.string()
       .required("Password is a required field.")
   }),
-
+handleSubmit(values, {props}){
+  props.loginUser(values)
+  props.handleClose()
+}
 })(LoginModal)
 
-export default FormikLogin;
+export default connect(() =>{},{loginUser})(FormikLogin)
