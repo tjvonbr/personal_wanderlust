@@ -133,7 +133,7 @@ const FormikRegister = withFormik({
 
 const mapStateToProps = state => {
   return {
-    users: state.usersReducer.users
+    users: state.userReducer.users
   }   
 }
 

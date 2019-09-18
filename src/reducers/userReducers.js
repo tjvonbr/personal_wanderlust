@@ -86,5 +86,4 @@ export const tripsReducer = (state = tripInitialState, action) => {
   }
 }
 
-
 export const reducers = { tripsReducer, userReducer };
