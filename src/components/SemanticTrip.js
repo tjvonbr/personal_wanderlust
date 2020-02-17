@@ -13,11 +13,11 @@ const SemanticTrip = ({trip, fetchId}) => {
         style={cardStyle}>
     
         <Card.Content>
-          <Card.Header>{trip.title}</Card.Header>
-          <Card.Meta>Start Date: {trip.startDate}</Card.Meta>
-          <Card.Meta>End Date: {trip.endDate}</Card.Meta>
-          <Card.Meta>Location: {trip.location}</Card.Meta>
-          <Card.Description>Description: {trip.description}</Card.Description>
+          <Card.Header style={headerStyle}>{trip.title}</Card.Header>
+          <Card.Meta><strong>Start Date: </strong>{trip.startDate}</Card.Meta>
+          <Card.Meta><strong>End Date: </strong>{trip.endDate}</Card.Meta>
+          <Card.Meta><strong>Location: </strong>{trip.location}</Card.Meta>
+          <Card.Description style={descriptionStyle}><strong>Description: </strong>{trip.description}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <div className='trip-btn-container'>
@@ -43,6 +43,14 @@ const cardStyle = {
   border: '1px solid gray',
   borderRadius: '3px',
   boxShadow: '2px 2px lightgray'
+}
+
+const headerStyle = {
+  marginBottom: '20px'
+}
+
+const descriptionStyle = {
+  marginTop: '20px'
 }
 
 const mapStateToProps = state => {
