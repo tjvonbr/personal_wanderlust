@@ -1,69 +1,58 @@
 import React from "react";
-import styled from "styled-components";
-import Image from "./images/tripimg.jpg";
+import tripImg from "../images/tripimg.jpg";
+import Styled from "styled-components";
+import { Button, Card, Image } from "semantic-ui-react";
+import {connect} from 'react-redux'
+import {fetchId} from '../actions/userActions.js'
 
-const MainDiv = styled.div`
-  display: flex;
-  background: #eff1ed;
-  width: 60%;
-  align-content: center;
-`;
+const Img = Styled.img`
+width: 30%;
+heigth: auto;
+padding: 10px
+`
 
-const ImgDiv = styled.img`
-  width: 200px;
-  height: auto;
-  margin: 25px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
-`;
-const Section = styled.section`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`;
-const HeaderTag = styled.h1`
-  font-size: 1.8rem;
-  color: white;
-`;
 
-const ParagraphInfo = styled.p`
-  font-size: 1rem;
-  color: white;
-  line-height: 4px;
-`;
-const DescriptParagraph = styled.p`
-  margin: 25px;
-  color: white;
-  font-size: 0.8rem;
-  padding: 15px;
-`;
-
-const Button = styled.button`
-  border-radius: 20px;
-  padding: 16px 22px;
-  margin: 10px;
-  width: 27%;
-  align-item: center;
-  border: none;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3);
-`;
-const Trip = props => {
+const Trip = ({ trip, fetchId }) => {
   return (
-    <MainDiv>
-      <ImgDiv src={Image} alt="image of trip" />
-      <Section>
-        <div>
-          <HeaderTag>Bearskin Lodge on the Gunflint Trail</HeaderTag>
-          <ParagraphInfo>Address 1</ParagraphInfo>
-          <ParagraphInfo>Address 2</ParagraphInfo>
-          <ParagraphInfo>Contact #</ParagraphInfo>
-          <DescriptParagraph>Place holder paragraph</DescriptParagraph>
+    <Card className="trip-card" style={cardStyle} centered={true}>
+      <Img src={tripImg}/>
+        <div >
+          <Card.Content>
+            <Card.Header>{trip.title}</Card.Header>
+            <Card.Meta>Start Date: {trip.startDate}</Card.Meta>
+            <Card.Meta>End Date: {trip.endDate}</Card.Meta>
+            <Card.Meta>Cost: ${trip.cost}</Card.Meta>
+            <Card.Description>{trip.description}</Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <div className="trip-btn-container">
+              <Button
+                floated="right"
+                className="btn add-btn"
+                icon="add"
+                labelPosition="right"
+                content="Add Trip"
+                size="small"
+                onClick={() => fetchId(trip.id)}
+              ></Button>
+            </div>
+          </Card.Content>
         </div>
-        <Button>View Website</Button>
-        <Button>Send Email</Button>
-        <Button>Book Now</Button>
-      </Section>
-    </MainDiv>
+      </Card>
   );
 };
 
-export default Trip;
+const cardStyle = {
+  width: "600px",
+  height: "300px",
+  margin: "20px auto",
+  border: "1px solid gray",
+  borderRadius: "3px",
+  boxShadow: "2px 2px lightgray",
+  display: "flex",
+  flexDirection: "row"
+};
+
+
+
+export default connect(() => {}, {fetchId})(Trip);
