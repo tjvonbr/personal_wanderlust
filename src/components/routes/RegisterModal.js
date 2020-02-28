@@ -5,7 +5,7 @@ import { Button, Modal } from 'semantic-ui-react'
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { registerUser } from '../actions/userActions';
+import { registerUser } from '../../actions/userActions';
 
 const Register = props => {
 
@@ -14,7 +14,7 @@ const Register = props => {
   return (
     <Modal 
       className="modal-container" 
-      dimmer="true" 
+      dimmer={true}
       open={registerOpen} 
       onClose={handleClose} 
       size="small">

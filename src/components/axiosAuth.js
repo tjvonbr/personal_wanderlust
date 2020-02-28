@@ -10,6 +10,7 @@ export const axiosWithAuth =() => {
         },
     });
 };
+
 const register = (userCredentials) => {
     axios.post('http://localhost:3300/', userCredentials)
       .then(res => {

@@ -1,58 +1,65 @@
-import React from "react";
-import tripImg from "../images/tripimg.jpg";
-import Styled from "styled-components";
-import { Button, Card, Image } from "semantic-ui-react";
-import {connect} from 'react-redux'
-import {fetchId} from '../actions/userActions.js'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Button, Card, Image } from 'semantic-ui-react'
 
-const Img = Styled.img`
-width: 30%;
-heigth: auto;
-padding: 10px
-`
+import { fetchId } from '../actions/userActions';
 
-
-const Trip = ({ trip, fetchId }) => {
+const SemanticTrip = ({trip, fetchId}) => {
   return (
-    <Card className="trip-card" style={cardStyle} centered={true}>
-      <Img src={tripImg}/>
-        <div >
-          <Card.Content>
-            <Card.Header>{trip.title}</Card.Header>
-            <Card.Meta>Start Date: {trip.startDate}</Card.Meta>
-            <Card.Meta>End Date: {trip.endDate}</Card.Meta>
-            <Card.Meta>Cost: ${trip.cost}</Card.Meta>
-            <Card.Description>{trip.description}</Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <div className="trip-btn-container">
-              <Button
-                floated="right"
-                className="btn add-btn"
-                icon="add"
-                labelPosition="right"
-                content="Add Trip"
-                size="small"
-                onClick={() => fetchId(trip.id)}
-              ></Button>
-            </div>
-          </Card.Content>
-        </div>
+    <Card.Group
+      itemsPerRow="two">  
+      <Card 
+        className="trip-card"
+        style={cardStyle}>
+    
+        <Card.Content>
+          <Card.Header style={headerStyle}>{trip.title}</Card.Header>
+          <Card.Meta><strong>Start Date: </strong>{trip.startDate}</Card.Meta>
+          <Card.Meta><strong>End Date: </strong>{trip.endDate}</Card.Meta>
+          <Card.Meta><strong>Location: </strong>{trip.location}</Card.Meta>
+          <Card.Description style={descriptionStyle}><strong>Description: </strong>{trip.description}</Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <div className='trip-btn-container'>
+            <Button
+              floated="right"
+              className="btn add-btn"
+              icon="add"
+              labelPosition="right"
+              content="Add Trip"
+              onClick={() => fetchId(trip.id)}>
+            </Button>
+          </div>
+        </Card.Content>
       </Card>
+    </Card.Group>
   );
 };
 
 const cardStyle = {
-  width: "600px",
-  height: "300px",
-  margin: "20px auto",
-  border: "1px solid gray",
-  borderRadius: "3px",
-  boxShadow: "2px 2px lightgray",
-  display: "flex",
-  flexDirection: "row"
+  width: '600px',
+  height: '300px',
+  margin: '20px auto',
+  border: '1px solid gray',
+  borderRadius: '3px',
+  boxShadow: '2px 2px lightgray'
+}
+
+const headerStyle = {
+  marginBottom: '20px'
+}
+
+const descriptionStyle = {
+  marginTop: '20px'
+}
+
+const mapStateToProps = state => {
+  return {
+    trips: state.tripsReducer.trips
+  };
 };
 
-
-
-export default connect(() => {}, {fetchId})(Trip);
+export default connect(
+  mapStateToProps,
+  {fetchId}
+)(SemanticTrip);

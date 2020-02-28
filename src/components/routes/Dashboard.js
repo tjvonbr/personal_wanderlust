@@ -1,7 +1,6 @@
 import React from "react";
 import TripList from './TripList';
-import rainier from '../images/rainier.jpg';
-
+import rainier from '../../images/rainier.jpg';
 import { Icon } from 'semantic-ui-react';
 
 const Dashboard = props => {

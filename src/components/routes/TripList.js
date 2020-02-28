@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import SemanticTrip from "./SemanticTrip";
-import Trip from "./Trip";
-import { fetchTrips } from "../actions/userActions";
+import SemanticTrip from "../Trip";
+import { fetchTrips } from "../../actions/userActions";
 
 const TripList = props => {
   useEffect(() => {
@@ -26,7 +25,7 @@ const TripList = props => {
       </h6>
       <p className="signature">Sincerely, the Wanderlust staff</p>
       {props.trips.map(trip => (
-        <Trip trip={trip} key={trip.id} />
+        <SemanticTrip trip={trip} key={trip.id} />
       ))}
     </div>
   );

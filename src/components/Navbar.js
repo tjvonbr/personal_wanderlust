@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import LoginModal from "./LoginModal";
+import Login from "./routes/Login";
 
 
 const NavBar = props => {
@@ -32,7 +32,7 @@ const NavBar = props => {
               onClick = {() => setLoginOpen(true)} >
                 Login/Register
           </li>
-          <LoginModal
+          <Login
             key="loginModal"
             loginOpen={loginOpen}
             closeLogin={closeLogin}
