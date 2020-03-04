@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wanderlust
 
-## Available Scripts
+## Contributors
+* Trevor Von Bruenchenhein
+* Miguel Gutierrez
+* Tyler Quinn
 
-In the project directory, you can run:
+## Overview
+Wanderlust is an application that offers pre-packaged vacations to potential clients. Instead of having to worry about planning out the vacation hour-by-hour, day-by-day, clients can outsource that task to Wanderlust and focus on the reason to take a vacation in the first place.
 
-### `npm start`
+### User Flow
+1.  You and your spouse are planning a 4-day weekend getaway but don't want to spend too much time preparing an itinerary for the trip.
+2.  You can visit the Wanderlust app to peruse through the catalog of pre-planned vacations and select one that you like--guides would include local activities, restaurants, etc.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
+### Key Features
+* Ability to search through pre-planned vacations
+* Ability to leave a review on a vacation that you've personally purchased
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Frameworks and Libraries
+#### Front end built with:
+* React
+* Semantic-UI
+* Styled Components
+* SASS
+* Formik
+* Yup
 
-### `npm test`
+#### Back end built with:
+* Node
+* Express
+* SQL
+* JSON Web Token
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
+1.  Install Node.js on your machine.
+2.  Clone the frontend repository and download it to your machine.
+3.  Once you have opened the project, `cd` into the `personal_split_the_bill_frontend` directory.
+4.  Install dependencies by running the `npm install` or `yarn install` command.
+5.  Run the app in development mode by running the `npm start` or `yarn start` command.
 
-### `npm run build`
+## Contributing
+If you'd like to contribute to this repository, please discuss the change you'd like to make via email with the owner of this repository.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Feature Requests
+We would love to hear from you about any features or fixes that might make the app better in any sense of the word.  In your initial email request, please be explicit and thorough regarding the change you'd like to make and why you think the change would improve the app.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Pull Requests
+If you have developed a patch, bug fix, or new feature that would improve this app, please submit a pull request. It is best to communicate your ideas with the developers first before investing a great deal of time into a pull request to ensure that it will mesh smoothly with the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1.  Remember this project is licensed under the MIT license, and by submitting a pull request, your changes should follow the guideline.
+2.  Update the README.md with details of your code.
+3.  Submit a pull request with your changes after carefully reviewing and testing your code.
